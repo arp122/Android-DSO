@@ -1,0 +1,161 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding = "20dp"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <com.androidplot.xy.XYPlot
+                    android:id="@+id/aprHistoryPlot"
+                    android:layout_width="400dp"
+                    android:layout_height="280dp"
+                    android:layout_marginLeft="10px"
+                    android:layout_marginRight="10px"
+                    android:layout_marginTop="10px"
+                    androidPlot.graphWidget.gridLinePaint.color="#0000ff"
+                    title="A/P/R History" />
+
+                <Button
+                    android:id="@+id/back"
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignRight="@+id/dynamicPlot"
+                    android:layout_alignTop="@+id/dynamicPlot"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="18dp"
+                    android:textColor="#2d3e50"
+                    android:onClick="back"
+                    android:text="Back"
+                    android:visibility="invisible" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="65dp" >
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="20dp"
+                android:layout_toRightOf="@+id/relativeLayout1"
+                android:textColor="#2d3e50"
+                android:text="Amplitude" />
+
+            <Button
+                android:id="@+id/button1"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView1"
+                android:layout_toRightOf="@+id/relativeLayout1"
+                android:onClick="ampInc"
+                android:background="@drawable/up" />
+
+            <Button
+                android:id="@+id/button4"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/button1"
+                android:layout_marginTop="16dp"
+                android:layout_toRightOf="@+id/relativeLayout1"
+                android:onClick="ampDec"
+                android:background="@drawable/down" />
+
+            <Button
+                android:id="@+id/button6"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/button4"
+                android:layout_alignBottom="@+id/button4"
+                android:layout_alignLeft="@+id/button5"
+                android:onClick="timeDec"
+                android:background="@drawable/down" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/textView1"
+                android:layout_alignBottom="@+id/textView1"
+                android:layout_marginLeft="30dp"
+                android:layout_toRightOf="@+id/textView1"
+                android:textColor="#2d3e50"
+                android:text="Time" />
+
+            <Button
+                android:id="@+id/button5"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/button4"
+                android:layout_alignLeft="@+id/textView2"
+                android:onClick="timeInc"
+                android:background="@drawable/up" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:weightSum="8" >
+
+        <ToggleButton
+            android:id="@+id/toggleButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:onClick="toggleHold"
+            android:text="Hold"
+            android:textOff="Hold Off"
+            android:textOn="Hold On" />
+
+        <ToggleButton
+            android:id="@+id/toggleButton1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Auto"
+            android:textOff="Auto Off"
+            android:textOn="Auto On" />
+
+        <Button
+            android:id="@+id/button2"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:onClick="snap"
+            android:text="Snapshot" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Calculate" />
+    </LinearLayout>
+
+</LinearLayout>
